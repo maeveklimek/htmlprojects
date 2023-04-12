@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap%27');
+
+body {
+  font-family: 'Bebas Neue', cursive;  
+  font-size: 20px;                          
+  line-height: 1.4;
+  background-color: #D3D3D3;
+  width: 550px;
+  margin: auto;
+}
+
+form {
+  background: #F2636B;
+  padding: 1rem 1rem;
+  border-radius: 5px;
+  width: auto;
+  margin: auto;
+}
+
+.submit-button {
+  width:100%;
+  padding: 0.75rem;
+  background: #F94555;
+  color: white;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-top:10px;
+}
+
+.input-headings {
+  margin: 0 auto .25rem auto;
+  padding: 0.25rem;
+}
+
+.form-inputs {
+  display: block;
+  width: 85%;
+  height: 2rem;
+  padding: 0.25rem 0.75rem;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 0.25rem;
+}
+
+#title{
+  text-align:center;
+  margin-top:15px;
+  margin-bottom:-15px;
+}
+
+#description{
+  text-align: center;
+}
+
+</style>
+</head>
+
+<Header>
+<h1 id="title"> Valorant Feedback Survey </h1>
+<p id="description"> Please fill out the information below. Thank you for taking our survey! </p>
+</Header>
+
+<body>
+
+<form id="survey-form">
+
+  <div class="input-headings">
+
+  <label for="name" id="name-label"> Name </label>
+  <input id="name" type="text" name="name" placeholder="Klara Bohringer" class="form-inputs" required </input>
+  <br>
+
+  <label for="email" id="email-label"> Email </label>
+  <input id="email" type="email" name="email" placeholder="killjoy@valorant.com" class="form-inputs" required>
+  </input>
+  <br>
+
+  <label for="number" id="number-label"> Age </label>
+  <input id="number" type="number" min="16" max="120" name="number" placeholder="21" class="form-inputs" required></input>
+  <br>
+
+  <label for="dropdown" id="rank"> Select rank </label>
+  <select id="dropdown" class="form-inputs">
+    <option value= "Iron"> Iron </option>
+    <option value= "Bronze"> Bronze </option>
+    <option value= "Silver"> Silver </option>
+    <option value= "Gold"> Gold </option>
+    <option value= "Platinum"> Platinum </option>
+    <option value= "Diamond"> Diamond </option>
+    <option value= "Ascendant"> Ascendant </option>
+    <option value= "Immortal"> Immortal </option>
+    <option value= "Radiant"> Radiant </option>
+  </select>
+  
+  <br>
+  <br>
+    <label for="checkbox" id="role"> What are your main role(s)? </label>
+  </br>
+    <input type="checkbox" id="roles1" name="roles1" value="roles1">
+    <label for="duelist"> Duelist </label><br>
+    <input type="checkbox" id="roles2" name="roles2" value="roles2">
+    <label for="initiator"> Initiator </label><br>
+    <input type="checkbox" id="roles3" name="roles3" value="roles3">
+    <label for="sentinel"> Sentinel </label><br>
+    <input type="checkbox" id="roles4" name="roles4" value="roles4">
+    <label for="controller"> Controller </label><br>
+
+<br>
+
+    <label for="dropdown" id="favorite-map"> Favorite map </label>
+    <select id="dropdown">
+      <option value= "Ascent"> Ascent </option>
+      <option value= "Bind"> Bind </option>
+      <option value= "Breeze"> Breeze </option>
+      <option value= "Fracture"> Fracture </option>
+      <option value= "Haven"> Haven </option>
+      <option value= "Icebox"> Icebox </option>
+      <option value= "Pearl"> Pearl </option>
+      <option value= "Split"> Split </option>
+    </select>
+    <br>
+    <br>
+
+    <label for="recommend" id="recommend"> <b> Would you recommend Valorant to a friend? </b> </label>
+    <br>
+    <input id="recommend" type="radio" id="yes" name="recommend" value="yes" required>
+    <label for="recommend"> Yes </label>
+    <input id="recommend" type="radio" id="no" name="recommend" value="no">
+    <label for="recommend"> No </label>
+  <br>
+  <br>
+
+<label id="textarea"> Additional comments/suggestions </label>
+<br>
+<textarea id="textarea" name="instructions" rows="5" cols="40">
+
+</textarea>
+<br>
+
+<input id="submit" type="submit" value="Submit" class="submit-button">
+
+</div>
+</form>
+
+</body>
+</html>
