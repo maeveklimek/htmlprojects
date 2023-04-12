@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+
+<script>
+    jQuery(document).ready(function () {
+        jQuery('.my-picture').animate({
+            'top': '0px',
+            'opacity': '1'
+        }, 250);
+
+        jQuery('.nav-link').click(function () {
+            var showContainer = jQuery(this).attr('show');
+            jQuery('.homepage-main').removeClass('current-nav');
+            jQuery('.nav-link').removeClass('current-nav');
+            jQuery(this).addClass('current-nav');
+            jQuery('.homepage-section').fadeOut('250');
+            setTimeout(function () {
+                jQuery(`.${showContainer}`).fadeIn('250');
+            }, 300);
+        });
+
+        jQuery('.homepage-main').click(function () {
+            jQuery('.homepage-section').slideDown();
+            jQuery('.nav-link').removeClass('current-nav');
+            jQuery(this).addClass('current-nav');
+        });
+    })
+</script>
+
+<style>
+    body {
+        font-family: century gothic;
+        padding: 0;
+        margin: 0;
+        overflow-x: hidden !important;
+        background-color: #483248;
+        transition: 0.25s all;
+    }
+
+    #navbar {
+        background-color: #483248;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        z-index: 999999;
+        transition: 0.25s all;
+    }
+
+    .current-nav {
+        background: #946794 !important;
+    }
+
+    #nav-list {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .nav-link,
+    .homepage-main {
+        cursor: pointer;
+        transition: 0.25s all;
+    }
+
+    .nav-link:hover {
+        background-color: #AA98A9;
+        transition: 0.25s all;
+    }
+
+    .homepage-main:hover {
+        background-color: #AA98A9;
+        transition: 0.25s all;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+        font-size: 1.5em;
+        padding: 1rem 2rem;
+    }
+
+    #welcome-section {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background-color: #000;
+        background-image: linear-gradient(62deg, #E6E6FA 0%, #51414F 100%);
+        padding-top: 150px;
+        padding-bottom: 150px;
+    }
+
+    h1 {
+        font-size: 4rem;
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+
+    .about-parent {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about-left {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-left: 25px;
+        padding-right: 100px;
+    }
+
+    .about-right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-left: 100px;
+        padding-right: 25px;
+    }
+
+    .my-picture {
+        border-radius: 15px;
+        position: relative;
+        top: 500px;
+        opacity: 0;
+        z-index: 0;
+        box-shadow: 5px 5px 5px #222;
+    }
+
+    #welcome-section p {
+        color: #221C35;
+        font-size: 1.25rem;
+        font-weight: 100;
+        text-align: center;
+    }
+
+    .projects {
+        text-align: center;
+        background-color: #796878;
+        margin: 0;
+        padding: 8rem 2rem;
+        box-shadow: 5px 5px 5px #222;
+    }
+
+    .projects>h2 {
+        font-size: 3.2rem;
+        margin-top: 0;
+    }
+
+    .project-img {
+        height: calc(100% - 6.8rem);
+        width: 100%;
+        object-fit: cover;
+
+    }
+
+    .project-title {
+        color: white;
+        width: 100%;
+        background-color: #483248;
+        padding: 2rem 0;
+        margin: 0;
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat (auto-fit, minmax(320px, 1fr));
+        grid-gap: 4rem;
+        width: 60%;
+        max-width: 800px;
+        margin: 0 auto;
+        margin-bottom: 6rem;
+
+    }
+
+    #contact {
+        background-color: #483248;
+        width: 100%;
+        height: auto;
+        padding: 1rem 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact {
+        color: white;
+        font-size: 4rem;
+    }
+
+
+    .form-inputs {
+        padding: 0.75rem;
+        background: white;
+        font-family: century gothic;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .submit-button {
+        padding: 0.75rem;
+        background: white;
+        font-family: century gothic;
+        font-weight: bold;
+        font-size: 20px;
+    }
+
+    .welcome-section {}
+
+    .hide {
+        display: none !important;
+    }
+</style>
+
+<body>
+    <title>Personal Portfolio</title>
+    <nav id="navbar">
+        <ul id="nav-list">
+            <li>
+                <a class="homepage-main current-nav">Home</a>
+            </li>
+            <li>
+                <a class="nav-link" show="welcome-section">About</a>
+            </li>
+            <li>
+                <a class="nav-link" show="projects">My Work</a>
+            </li>
+            <li>
+                <a class="nav-link" show="contact">Contact</a>
+            </li>
+        </ul>
+    </nav>
+
+    <section id="welcome-section" class="welcome-section homepage-section">
+        <div class="about-parent">
+            <div class="about-left">
+                <h1>Hi, I'm Maeve</h1>
+                <p>I currently work as a software engineer. <br> My primary experience is in information systems,
+                    information technology, and esports.</br>Welcome to my portfolio :-)</p>
+                <p></p>
+            </div>
+
+            <div class="about-right">
+                <img class="my-picture" src="https://i.imgur.com/NaU4j9B.jpg" width=250></img>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects homepage-section">
+        <h2>My recent projects</h2>
+        <div class="projects-grid">
+            <a href="http://student.uncw.edu/jbk4523/MIS310/Project1/index.html">
+                <img src="https://i.imgur.com/k7SPQgV.png" alt="Survey Form" class="project-img" />
+                <p class="project-title">Survey Form</p>
+            </a>
+
+            <a href="http://student.uncw.edu/jbk4523/MIS310/Project2/index.html">
+                <img src="https://i.imgur.com/moMjDRV.png" alt="Tribute Page" class="project-img" />
+                <p class="project-title">Tribute Page</p>
+            </a>
+
+            <a href="http://student.uncw.edu/jbk4523/MIS310/Project3/index.html">
+                <img src="https://i.imgur.com/b4lXK7g.png" alt="Technical Page" class="project-img" />
+                <p class="project-title">Technical Page</p>
+            </a>
+        </div>
+    </section>
+
+    <section id="contact" class="contact homepage-section">
+        <div id="contact-header">
+            <h3>Interested? Let's talk!</h3>
+        </div>
+        <div class="contact-link-flex">
+            <a href="https://www.linkedin.com/in/maeve-klimek/" class="contact-link" target="_blank"
+                rel="noopener noreferrer" title="linkedin" aria-label="Arianne's linked in profile">
+                <i class="fab fa-linkedin-in fa-highlight" aria-hidden="true" title="linkedin">
+                    <span class="sr-only">link to linkedin profile</span>
+                </i>
+            </a>
+
+            <a href="https://www.freecodecamp.org/jbk4523" class="contact-link" target="_blank"
+                rel="noopener noreferrer" aria-label="Arianne's free code camp profile">
+                <i class="fab fa-free-code-camp fa-highlight" aria-hidden="true" title="freeCodeCamp profile">
+                    <span class="sr-only">Link to free code camp profile</span>
+                </i>
+            </a>
+
+            <a href="mailto:maeveklimek@gmail.com" class="contact-link" title="email me" aria-label="maeve's email">
+                <i class="fas fa-at fa-highlight" aria-hidden="true" title="email me">
+                    <span class="sr-only">link to email address</span>
+                </i>
+            </a>
+        </div>
+    </section>
+</body>
+
+</html>
